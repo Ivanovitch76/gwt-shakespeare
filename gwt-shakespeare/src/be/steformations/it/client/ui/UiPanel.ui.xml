@@ -1,0 +1,41 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:m="urn:import:gwt.material.design.client.ui"
+	xmlns:it="urn:import:be.steformations.it.client.ui.widget">
+
+<ui:style>
+	.blue{
+		color:blue;
+	}
+</ui:style>
+
+<m:MaterialRow marginTop="20" addStyleNames="{style.blue}">
+	<m:MaterialColumn grid="s6" offset="s3">
+		<m:MaterialRow><!-- inputs -->
+			<m:MaterialColumn grid="s4">
+				<it:PlayInput placeholder="Pièce" ui:field="playInput"/>
+			</m:MaterialColumn>
+			<m:MaterialColumn grid="s4">
+				<it:SpeakerInput label="Personnage" ui:field="speakerInput"/>
+			</m:MaterialColumn>
+			<m:MaterialColumn grid="s4">
+				<it:StartInput label="Début" ui:field="startInput"/>
+			</m:MaterialColumn>
+		</m:MaterialRow>
+		<m:MaterialRow><!-- buttons -->
+			<m:MaterialColumn>
+				<it:SearchButton text="Chercher" ui:field="searchButton"/>
+			</m:MaterialColumn>	
+			<m:MaterialColumn>
+				<it:ResetButton text="Réinitialiser"/>
+			</m:MaterialColumn>	
+		</m:MaterialRow>
+		<m:MaterialRow><!-- output -->
+			<m:MaterialColumn>
+				<it:Output/>
+			</m:MaterialColumn>		
+		</m:MaterialRow>		
+	</m:MaterialColumn>
+</m:MaterialRow>
+
+</ui:UiBinder> 
