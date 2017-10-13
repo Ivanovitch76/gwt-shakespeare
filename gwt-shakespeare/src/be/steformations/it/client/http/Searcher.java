@@ -18,6 +18,7 @@ import be.steformations.it.client.event.EventManager;
 import be.steformations.it.client.event.search.SearchEvent;
 import be.steformations.it.client.event.search.SearchEventManager;
 import be.steformations.it.client.event.search.SearchParams;
+import be.steformations.it.client.result.ResultEvent;
 
 public class Searcher implements SearchEventManager, RequestCallback {
 
@@ -52,7 +53,8 @@ public class Searcher implements SearchEventManager, RequestCallback {
 	public void onResponseReceived(Request request, Response response) {
 		GWT.log("Searcher.onResponseReceived()");
 		String monologue = response.getText();
-		Window.alert(monologue);
+		ResultEvent event = new ResultEvent(monologue);
+		EventManager.getInstance().fireEvent(event);
 		
 	}
 
